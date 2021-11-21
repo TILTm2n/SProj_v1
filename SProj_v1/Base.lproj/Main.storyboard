@@ -16,39 +16,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yx-ig-foJ">
-                                <rect key="frame" x="157" y="433" width="120" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="04X-PM-CRe"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="DTe-cf-gbL"/>
-                                    <constraint firstAttribute="height" constant="40" id="jwo-tS-qYg"/>
-                                    <constraint firstAttribute="width" constant="120" id="zob-nv-1Ax"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
-                                    <backgroundConfiguration key="background" strokeWidth="3" strokeOutset="0.0">
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                        <color key="strokeColor" systemColor="systemBlueColor"/>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dyM-HX-Uyc" userLabel="Главная таблица">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="qtt-UU-VUP" style="IBUITableViewCellStyleDefault" id="fo9-Tf-BjA">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fo9-Tf-BjA" id="iWq-Li-0Oy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qtt-UU-VUP">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="buttonControl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1pF-4L-XxN"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="w7n-7O-NVZ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="XWy-2V-cDn"/>
                                 </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTf-4c-Qny">
-                                <rect key="frame" x="167" y="473" width="80" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8yx-ig-foJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="10" id="HQS-UX-H35"/>
-                            <constraint firstItem="YTf-4c-Qny" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MdS-2m-qO9"/>
-                            <constraint firstItem="8yx-ig-foJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="5" id="NVh-jf-trC"/>
-                            <constraint firstItem="YTf-4c-Qny" firstAttribute="top" secondItem="8yx-ig-foJ" secondAttribute="bottom" id="rp4-Uz-eCP"/>
+                            <constraint firstItem="dyM-HX-Uyc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JJk-dt-V01"/>
+                            <constraint firstItem="dyM-HX-Uyc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="WLF-AK-4Ql"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dyM-HX-Uyc" secondAttribute="bottom" id="kvr-6T-W1F"/>
+                            <constraint firstItem="dyM-HX-Uyc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lru-Wd-Vgf"/>
+                            <constraint firstItem="dyM-HX-Uyc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rTn-8n-agx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dyM-HX-Uyc" secondAttribute="trailing" id="yzf-gF-0hI"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -60,12 +64,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
