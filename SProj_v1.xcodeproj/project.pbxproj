@@ -50,7 +50,6 @@
 			isa = PBXGroup;
 			children = (
 				A3A9C9F52748F55700798A47 /* Main.storyboard */,
-				A33288DD274AB4DE00EE4726 /* CustomTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -58,6 +57,7 @@
 		A33288DA274A912600EE4726 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A33288DD274AB4DE00EE4726 /* CustomTableViewCell.swift */,
 				A3A9C9F12748F55700798A47 /* SceneDelegate.swift */,
 				A3A9C9EF2748F55700798A47 /* AppDelegate.swift */,
 				A33288DB274AA7EA00EE4726 /* CustomTableViewController.swift */,

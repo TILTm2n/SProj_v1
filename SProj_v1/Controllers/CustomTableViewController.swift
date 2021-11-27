@@ -46,6 +46,7 @@ class CustomTableViewController: UITableViewController {
         cell.nameLabel.text = restaurantNames[indexPath.row]
         cell.thumbnailImageView.layer.cornerRadius = 32.5
         cell.thumbnailImageView.clipsToBounds = true
+        
 
         return cell
     }
@@ -105,8 +106,45 @@ class CustomTableViewController: UITableViewController {
     
 //    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) ->
 //    [UITableViewRowAction]? {
+//        let share = UITableViewRowAction(style: .default, title: "Поделиться") { (action, indexPath) in
+//            let defaultText = "I now in" + self.restaurantNames[indexPath.row]
 //
+//            if let image = UIImage(named: self.restaurantNames[indexPath.row]){
+//                let activityController = UIActivityViewController(activityItems: [defaultText, image], applicationActivities: nil)
+//            }
+//
+//        }
+//
+//        let delete = UITableViewRowAction(style: .default, title: "Удалить") { (action, indexPath) in
+//            self.restaurantImages.remove(at: indexPath.row)
+//            self.restaurantNames.remove(at: indexPath.row)
+//            self.restaurantIsVisited.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        }
+//
+//        return [share, delete]
 //    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
+        
+//        let taken = UIContextualAction(style: .normal, title: "Taken") { (action, view, completion) in
+//                    print("Just Swiped Taken", action)
+//                    completion(true)
+//                }
+                //taken.backgroundColor =  UIColor(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
+             
+                let added = UIContextualAction(style: .normal, title: "Added") { (action, view, completion) in
+                    print("Just Swiped Added", action)
+                    completion(false)
+                }
+                
+                added.backgroundColor =  UIColor(red: 0.2436070212, green: 0.5393256153, blue: 0.1766586084, alpha: 1)
+             
+                let config = UISwipeActionsConfiguration(actions: [added])
+                config.performsFirstActionWithFullSwipe = false
+             
+                return config
+    }
     
     
 }
