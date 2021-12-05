@@ -9,6 +9,42 @@ import UIKit
 
 class EatersDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var rateButton: UIButton!
+    
+    @IBAction func unwindSegue(segue: UIStoryboardSegue){
+        
+    }
+    
+    @IBAction func rateButtonSegue(_ sender: Any) {
+        let fvc = storyboard?.instantiateViewController(withIdentifier: "FinalVC") as! FinalViewController
+        navigationController?.pushViewController(fvc, animated: true)
+        
+        print("po")
+    }
+    
+    var restaurant: Restaurant?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.hidesBarsOnSwipe = true
+        navigationController?.setToolbarHidden(false, animated: true)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Second Controller"
+        imageView.image = UIImage(named: restaurant!.image)
+        
+        tableView.estimatedRowHeight = 38
+        tableView.rowHeight = UITableView.automaticDimension
+        
+        rateButton.layer.cornerRadius = 5
+        rateButton.layer.borderWidth = 2
+        rateButton.layer.borderColor = UIColor.white.cgColor
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EateryDetailTableViewCell
         
@@ -21,7 +57,7 @@ class EatersDetailViewController: UIViewController, UITableViewDataSource, UITab
             cell.valueLabel.text = restaurant?.type
         case 2:
             cell.keyLabel.text = "adress"
-            cell.valueLabel.text = restaurant?.name
+            cell.valueLabel.text = restaurant?.location
         case 3:
             cell.keyLabel.text = "i was here"
             cell.valueLabel.text = restaurant!.isVisited ? "yes" : "no"
@@ -44,20 +80,7 @@ class EatersDetailViewController: UIViewController, UITableViewDataSource, UITab
         return 4
     }
     
-
     
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var tableView: UITableView!
-    
-    var restaurant: Restaurant?
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Second Controller"
-        imageView.image = UIImage(named: restaurant!.image)
-    }
     
 
     /*

@@ -11,7 +11,7 @@ class CustomTableViewController: UITableViewController {
     
     //Модель - массивы данных
     var restaurants: [Restaurant] = [
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "ogonek.jpg", isVisited: false),
+        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa, England< USA, Germany, Germany, Germany, Germany,Germany, Germany, Germany,Germany, Germany, Germany6Germany, Germany, Germany", image: "ogonek.jpg", isVisited: false),
         Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "elu.jpg", isVisited: false),
         Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "bonsai.jpg", isVisited: false),
         Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "dastarhan.jpg", isVisited: false),
@@ -43,8 +43,7 @@ class CustomTableViewController: UITableViewController {
         super.viewDidLoad()
 
         
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.tintColor = .blue
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -71,6 +70,8 @@ class CustomTableViewController: UITableViewController {
 
         cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
         cell.nameLabel.text = restaurants[indexPath.row].name
+        cell.locationLabel.text = restaurants[indexPath.row].location
+        cell.typelabel.text = restaurants[indexPath.row].type
         cell.thumbnailImageView.layer.cornerRadius = 32.5
         cell.thumbnailImageView.clipsToBounds = true
         
@@ -91,7 +92,8 @@ class CustomTableViewController: UITableViewController {
             alertC.addAction(ok)
             self.present(alertC, animated: true, completion: nil)
         }
-                
+//end first action
+        
 //second action
         let isVisitedTitle = self.restaurants[index].isVisited ? "I wasn't here" : "I was here"
         
