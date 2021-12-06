@@ -8,7 +8,7 @@
 import UIKit
 
 class FinalViewController: UIViewController {
-    
+    //test
     
     @IBOutlet weak var closeButton: UIButton!
     
@@ -24,6 +24,12 @@ class FinalViewController: UIViewController {
         
         closeButton.layer.zPosition = 1
         
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        self.view.insertSubview(blurEffectView, at: 1)
     }
     
 
