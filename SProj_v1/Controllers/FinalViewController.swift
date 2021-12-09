@@ -8,17 +8,38 @@
 import UIKit
 
 class FinalViewController: UIViewController {
-
+    
     @IBAction func backToSecond(_ sender: Any) {
         self.dismiss(animated: true) {
             print("окно закрыто")
         }
     }
     
+    
+    @IBOutlet weak var ratingStackView: UIStackView!
+    @IBOutlet weak var badButton: UIButton!
+    @IBOutlet weak var goodbutton: UIButton!
+    @IBOutlet weak var brilliantButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        ratingStackView.transform = CGAffineTransform(scaleX: 0, y: 0)
+        
+        let blurEffect = UIBlurEffect(style: .light)
+        
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.insertSubview(blurEffectView, at: 1)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.4) {
+            self.ratingStackView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
     }
     
 
