@@ -13,16 +13,14 @@ class EatersDetailViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var rateButton: UIButton!
     
-    @IBAction func unwindSegue(segue: UIStoryboardSegue){
-        
-    }
     
     @IBAction func rateButtonSegue(_ sender: Any) {
         let fvc = storyboard?.instantiateViewController(withIdentifier: "FinalVC") as! FinalViewController
-        navigationController?.pushViewController(fvc, animated: true)
+        showDetailViewController(fvc, sender: nil)
         
-        print("po")
+        print("окно открыто")
     }
+    
     
     var restaurant: Restaurant?
     

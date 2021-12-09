@@ -2,34 +2,23 @@
 //  FinalViewController.swift
 //  SProj_v1
 //
-//  Created by Eugene on 05.12.2021.
+//  Created by Eugene on 08.12.2021.
 //
 
 import UIKit
 
 class FinalViewController: UIViewController {
-    //test
-    
-    @IBOutlet weak var closeButton: UIButton!
-    
-    @IBAction func closeButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-        print("sosi")
+
+    @IBAction func backToSecond(_ sender: Any) {
+        self.dismiss(animated: true) {
+            print("окно закрыто")
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.setNavigationBarHidden(true, animated: true)
-        
-        closeButton.layer.zPosition = 1
-        
-        let blurEffect = UIBlurEffect(style: .light)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = self.view.bounds
-        blurEffectView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
-        self.view.insertSubview(blurEffectView, at: 1)
+        // Do any additional setup after loading the view.
     }
     
 

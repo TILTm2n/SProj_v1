@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A3228B2C275D366000B82C3D /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3228B2B275D366000B82C3D /* FinalViewController.swift */; };
 		A33288DC274AA7EA00EE4726 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33288DB274AA7EA00EE4726 /* CustomTableViewController.swift */; };
 		A33288DE274AB4DE00EE4726 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33288DD274AB4DE00EE4726 /* CustomTableViewCell.swift */; };
 		A38DEBA32752602300C450E5 /* EatersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38DEBA22752602300C450E5 /* EatersDetailViewController.swift */; };
 		A38DEBA527528A9F00C450E5 /* Restaurant.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38DEBA427528A9F00C450E5 /* Restaurant.swift.swift */; };
 		A38DEBA72752B8C700C450E5 /* EateryDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38DEBA62752B8C700C450E5 /* EateryDetailTableViewCell.swift */; };
+		A39967DB276144D900209B44 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39967DA276144D900209B44 /* FinalViewController.swift */; };
 		A3A9C9F02748F55700798A47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C9EF2748F55700798A47 /* AppDelegate.swift */; };
 		A3A9C9F22748F55700798A47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C9F12748F55700798A47 /* SceneDelegate.swift */; };
 		A3A9C9F72748F55700798A47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A9C9F52748F55700798A47 /* Main.storyboard */; };
@@ -21,12 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A3228B2B275D366000B82C3D /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
 		A33288DB274AA7EA00EE4726 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		A33288DD274AB4DE00EE4726 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		A38DEBA22752602300C450E5 /* EatersDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatersDetailViewController.swift; sourceTree = "<group>"; };
 		A38DEBA427528A9F00C450E5 /* Restaurant.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift.swift; sourceTree = "<group>"; };
 		A38DEBA62752B8C700C450E5 /* EateryDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateryDetailTableViewCell.swift; sourceTree = "<group>"; };
+		A39967DA276144D900209B44 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
 		A3A9C9EC2748F55700798A47 /* SProj_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SProj_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A9C9EF2748F55700798A47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3A9C9F12748F55700798A47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 				A33288DB274AA7EA00EE4726 /* CustomTableViewController.swift */,
 				A38DEBA62752B8C700C450E5 /* EateryDetailTableViewCell.swift */,
 				A38DEBA22752602300C450E5 /* EatersDetailViewController.swift */,
-				A3228B2B275D366000B82C3D /* FinalViewController.swift */,
+				A39967DA276144D900209B44 /* FinalViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 				A33288DC274AA7EA00EE4726 /* CustomTableViewController.swift in Sources */,
 				A33288DE274AB4DE00EE4726 /* CustomTableViewCell.swift in Sources */,
 				A38DEBA32752602300C450E5 /* EatersDetailViewController.swift in Sources */,
-				A3228B2C275D366000B82C3D /* FinalViewController.swift in Sources */,
+				A39967DB276144D900209B44 /* FinalViewController.swift in Sources */,
 				A3A9C9F22748F55700798A47 /* SceneDelegate.swift in Sources */,
 				A38DEBA527528A9F00C450E5 /* Restaurant.swift.swift in Sources */,
 			);
