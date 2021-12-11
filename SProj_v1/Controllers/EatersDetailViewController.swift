@@ -17,10 +17,16 @@ class EatersDetailViewController: UIViewController, UITableViewDataSource, UITab
     @IBAction func rateButtonSegue(_ sender: Any) {
         let fvc = storyboard?.instantiateViewController(withIdentifier: "FinalVC") as! FinalViewController
         showDetailViewController(fvc, sender: nil)
-        
+
         print("окно открыто")
     }
     
+    @IBAction func unwindSegue(segue: UIStoryboardSegue){
+        guard let svc = segue.source as? FinalViewController else { return }
+        guard let rating = svc.restRating else { return }
+        
+        rateButton.setImage(UIImage(named: rating), for: .normal)
+    }
     
     var restaurant: Restaurant?
     

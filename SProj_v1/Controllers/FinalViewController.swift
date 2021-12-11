@@ -10,9 +10,9 @@ import UIKit
 class FinalViewController: UIViewController {
     
     @IBAction func backToSecond(_ sender: Any) {
-        self.dismiss(animated: true) {
-            print("окно закрыто")
-        }
+//        self.dismiss(animated: true) {
+//            print("окно закрыто")
+//        }
     }
     
     
@@ -20,7 +20,18 @@ class FinalViewController: UIViewController {
     @IBOutlet weak var badButton: UIButton!
     @IBOutlet weak var goodbutton: UIButton!
     @IBOutlet weak var brilliantButton: UIButton!
+    var restRating: String?
     
+    @IBAction func rateRestaurant(_ sender: UIButton){
+        switch sender.tag {
+        case 0: restRating = "bad"
+        case 1: restRating = "good"
+        case 2: restRating = "brilliant"
+        default: break
+        }
+        
+        performSegue(withIdentifier: "unwindSegueToDVC", sender: sender)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

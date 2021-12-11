@@ -155,13 +155,11 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="">
-                                    <backgroundConfiguration key="background" image="bad">
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                    </backgroundConfiguration>
+                                    <backgroundConfiguration key="background" image="bad"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="rateButtonSegue:" destination="Vj2-QB-0F0" eventType="touchUpInside" id="hlT-pl-ggv"/>
-                                    <segue destination="BzJ-sb-WUW" kind="showDetail" id="H8I-BM-0bW"/>
+                                    <segue destination="BzJ-sb-WUW" kind="showDetail" identifier="unwindSegueToDVC" id="H8I-BM-0bW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -198,16 +196,19 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rateBackground" translatesAutoresizingMaskIntoConstraints="NO" id="pMc-im-DCC">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0y-Wd-6Xq">
-                                <rect key="frame" x="327" y="20" width="67" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0y-Wd-6Xq" userLabel="close">
+                                <rect key="frame" x="327" y="20" width="67" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="S0y-Wd-6Xq" secondAttribute="height" multiplier="67:64" id="6Vo-9m-Q41"/>
+                                    <constraint firstAttribute="height" constant="64" id="eFd-za-hiP"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                    </backgroundConfiguration>
+                                <buttonConfiguration key="configuration" style="plain" image="close" title="">
+                                    <backgroundConfiguration key="background"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="backToSecond:" destination="BzJ-sb-WUW" eventType="touchUpInside" id="kha-XD-x56"/>
+                                    <segue destination="d5v-3C-3su" kind="unwind" identifier="unwindSegueToDVC" unwindAction="unwindSegueWithSegue:" id="wao-bX-R1N"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как Вам приложение?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="co3-OF-ghs">
@@ -228,19 +229,24 @@
                                         <buttonConfiguration key="configuration" style="plain" image="bad" title=""/>
                                         <connections>
                                             <action selector="badbutton:" destination="BzJ-sb-WUW" eventType="touchUpInside" id="HwP-PP-gqM"/>
+                                            <action selector="rateRestaurant:" destination="BzJ-sb-WUW" eventType="touchUpInside" id="p1g-Hl-eNZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VD7-hT-I3y">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VD7-hT-I3y">
                                         <rect key="frame" x="142.5" y="0.0" width="129" height="99"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="good" title=""/>
+                                        <connections>
+                                            <action selector="rateRestaurant:" destination="BzJ-sb-WUW" eventType="touchUpInside" id="y9z-8k-n4S"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20n-zC-KvT">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20n-zC-KvT">
                                         <rect key="frame" x="285.5" y="0.0" width="128.5" height="99"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="brilliant" title=""/>
                                         <connections>
                                             <action selector="brilliantButton:" destination="BzJ-sb-WUW" eventType="touchUpInside" id="Tww-HG-SWE"/>
+                                            <action selector="rateRestaurant:" destination="BzJ-sb-WUW" eventType="touchUpInside" id="LY9-n3-Vef"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -272,6 +278,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPh-FB-LBg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="d5v-3C-3su" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2222" y="56"/>
         </scene>
@@ -297,13 +304,11 @@
     <resources>
         <image name="bad" width="85" height="85"/>
         <image name="brilliant" width="85" height="85"/>
+        <image name="close" width="50" height="50"/>
         <image name="good" width="85" height="85"/>
         <image name="rateBackground" width="200" height="286"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
