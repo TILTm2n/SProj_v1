@@ -147,15 +147,13 @@
                                     <outlet property="delegate" destination="Vj2-QB-0F0" id="oVF-DE-BQJ"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrA-X9-Hke">
-                                <rect key="frame" x="359" y="98" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="aaV-QX-sfj"/>
-                                    <constraint firstAttribute="width" constant="45" id="qNp-0z-VGW"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrA-X9-Hke">
+                                <rect key="frame" x="306" y="114" width="88" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="">
-                                    <backgroundConfiguration key="background" image="bad"/>
+                                <buttonConfiguration key="configuration" style="plain" image="good" title="">
+                                    <backgroundConfiguration key="background"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="rateButtonSegue:" destination="Vj2-QB-0F0" eventType="touchUpInside" id="hlT-pl-ggv"/>
@@ -166,11 +164,9 @@
                         <viewLayoutGuide key="safeArea" id="0pl-MK-f4J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0pl-MK-f4J" firstAttribute="trailing" secondItem="vrA-X9-Hke" secondAttribute="trailing" constant="10" id="3cw-om-rMv"/>
                             <constraint firstItem="pE7-1F-u3j" firstAttribute="bottom" secondItem="0pl-MK-f4J" secondAttribute="bottom" id="6sL-jk-RK0"/>
                             <constraint firstAttribute="trailing" secondItem="pE7-1F-u3j" secondAttribute="trailing" id="7rL-RU-A3p"/>
                             <constraint firstItem="pE7-1F-u3j" firstAttribute="leading" secondItem="2JP-ay-Aae" secondAttribute="leading" id="Mdx-Du-iV1"/>
-                            <constraint firstItem="vrA-X9-Hke" firstAttribute="top" secondItem="0pl-MK-f4J" secondAttribute="top" constant="10" id="Mfl-QC-Ec7"/>
                             <constraint firstItem="pE7-1F-u3j" firstAttribute="top" secondItem="0pl-MK-f4J" secondAttribute="top" id="OmJ-2g-IMq"/>
                         </constraints>
                     </view>
@@ -228,7 +224,6 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="bad" title=""/>
                                         <connections>
-                                            <action selector="badbutton:" destination="BzJ-sb-WUW" eventType="touchUpInside" id="HwP-PP-gqM"/>
                                             <action selector="rateRestaurant:" destination="BzJ-sb-WUW" eventType="touchUpInside" id="p1g-Hl-eNZ"/>
                                         </connections>
                                     </button>
@@ -237,7 +232,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="good" title=""/>
                                         <connections>
-                                            <action selector="rateRestaurant:" destination="BzJ-sb-WUW" eventType="touchUpInside" id="y9z-8k-n4S"/>
+                                            <action selector="rateRestaurant:" destination="BzJ-sb-WUW" eventType="touchUpInside" id="vP1-SE-kSq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20n-zC-KvT">
@@ -245,7 +240,6 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="brilliant" title=""/>
                                         <connections>
-                                            <action selector="brilliantButton:" destination="BzJ-sb-WUW" eventType="touchUpInside" id="Tww-HG-SWE"/>
                                             <action selector="rateRestaurant:" destination="BzJ-sb-WUW" eventType="touchUpInside" id="LY9-n3-Vef"/>
                                         </connections>
                                     </button>
@@ -273,7 +267,7 @@
                     <connections>
                         <outlet property="badButton" destination="aTY-ZA-eCZ" id="THQ-Pl-ymu"/>
                         <outlet property="brilliantButton" destination="20n-zC-KvT" id="U2X-m1-fsQ"/>
-                        <outlet property="goodbutton" destination="20n-zC-KvT" id="lrw-pL-MdN"/>
+                        <outlet property="goodButton" destination="VD7-hT-I3y" id="3Na-Sm-jcC"/>
                         <outlet property="ratingStackView" destination="q3z-wD-QhP" id="usd-xu-v9c"/>
                     </connections>
                 </viewController>

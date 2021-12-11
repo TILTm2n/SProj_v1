@@ -43,10 +43,6 @@ class EatersDetailViewController: UIViewController, UITableViewDataSource, UITab
         tableView.estimatedRowHeight = 38
         tableView.rowHeight = UITableView.automaticDimension
         
-        rateButton.layer.cornerRadius = 5
-        rateButton.layer.borderWidth = 2
-        rateButton.layer.borderColor = UIColor.white.cgColor
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

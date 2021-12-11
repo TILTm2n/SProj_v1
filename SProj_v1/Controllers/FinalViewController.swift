@@ -18,7 +18,7 @@ class FinalViewController: UIViewController {
     
     @IBOutlet weak var ratingStackView: UIStackView!
     @IBOutlet weak var badButton: UIButton!
-    @IBOutlet weak var goodbutton: UIButton!
+    @IBOutlet weak var goodButton: UIButton!
     @IBOutlet weak var brilliantButton: UIButton!
     var restRating: String?
     
