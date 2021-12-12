@@ -28,6 +28,10 @@ class CustomTableViewController: UITableViewController {
         Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "bochka.jpg", isVisited: false),
     ]
     
+    @IBAction func close(segue: UIStoryboardSegue){
+        
+    }
+    
 //    var restaurantNames = ["Ogonёk Grill&Bar","Елу","Bonsai","Дастархан","Индокитай","X.O","Баклан Гриль","Respublica","Respublica","Respublica","Respublica","Respublica","Respublica","Respublica"]
 //    var restaurantImages = ["ogonek.jpg","elu.jpg","bonsai.jpg","dastarhan.jpg","indokitay.jpg","x.o.jpg","balkan.jpg","respublica.jpg","speakeasy.jpg","morris.jpg","istorii.jpg","klassik.jpg","love.jpg","shok.jpg","bochka.jpg",]
 //    var restaurantIsVisited = [Bool](repeatElement(false, count: 15))
