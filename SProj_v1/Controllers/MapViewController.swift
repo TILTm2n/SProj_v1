@@ -47,13 +47,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) as? MKPinAnnotationView
         
+        //различие между MKPinAnnotationView и MKAnnotationView заключается в наличии будавки на карте!!!
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
             annotationView?.canShowCallout = true
         }
-        
+        //создание контейнера для картинки
         let rightImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        //помещение картинки в контейнер
         rightImage.image = UIImage(named: restaurant.image)
+        //добавление контейнера картинки на геопозицию
         annotationView?.rightCalloutAccessoryView = rightImage
         
         return annotationView
