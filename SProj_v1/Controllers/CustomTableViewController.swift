@@ -11,7 +11,7 @@ class CustomTableViewController: UITableViewController {
     
     //Модель - массивы данных
     var restaurants: [Restaurant] = [
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa, England< USA, Germany, Germany, Germany, Germany,Germany, Germany, Germany,Germany, Germany, Germany6Germany, Germany, Germany", image: "ogonek.jpg", isVisited: false),
+        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "ogonek.jpg", isVisited: false),
         Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "elu.jpg", isVisited: false),
         Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "bonsai.jpg", isVisited: false),
         Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "dastarhan.jpg", isVisited: false),

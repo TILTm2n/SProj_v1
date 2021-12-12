@@ -12,6 +12,7 @@ class EatersDetailViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var rateButton: UIButton!
+    @IBOutlet weak var mapButton: UIButton!
     
     
     @IBAction func rateButtonSegue(_ sender: Any) {
@@ -19,6 +20,14 @@ class EatersDetailViewController: UIViewController, UITableViewDataSource, UITab
         showDetailViewController(fvc, sender: nil)
 
         print("окно открыто")
+    }
+    
+    @IBAction func mapButtonSegue(_ sender: Any) {
+        let mvc = storyboard?.instantiateViewController(withIdentifier: "MapVC") as! MapViewController
+        mvc.restaurant = self.restaurant
+        show(mvc, sender: sender)
+        
+        
     }
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue){
@@ -39,9 +48,9 @@ class EatersDetailViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         title = "Second Controller"
         imageView.image = UIImage(named: restaurant!.image)
-        
         tableView.estimatedRowHeight = 38
         tableView.rowHeight = UITableView.automaticDimension
+        
         
     }
     
@@ -79,6 +88,7 @@ class EatersDetailViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
+    
     
     
     
