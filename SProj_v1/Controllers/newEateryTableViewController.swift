@@ -7,7 +7,7 @@
 
 import UIKit
 
-class newEateryTableViewController: UITableViewController {
+class newEateryTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,16 @@ class newEateryTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    @IBOutlet weak var imageView: UIImageView!
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) { //в этом методе определяем что мы должны делать когда выбираем кокретное изображение
+        imageView.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -55,6 +64,9 @@ class newEateryTableViewController: UITableViewController {
     {
         if UIImagePickerController.isSourceTypeAvailable(source){ //проверятся возможно ли добраться до галереи или фотокамеры
             let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            
             imagePicker.allowsEditing = true //разрешаем редактирование
             imagePicker.sourceType = source //(источник)здесь попадааем либо на камеру либо на галерею фотографий, source указывает на то что мы хотим передать источник данных сами
             self.present(imagePicker, animated: true, completion: nil)

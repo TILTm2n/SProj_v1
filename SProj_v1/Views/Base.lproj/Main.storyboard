@@ -272,6 +272,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="1iL-sC-PEd" id="hSD-sh-o88"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjI-FH-gDo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="DY4-2o-C8l" userLabel="Exit" sceneMemberID="exit"/>
