@@ -23,7 +23,7 @@ class newEateryTableViewController: UITableViewController, UIImagePickerControll
     @IBOutlet weak var imageView: UIImageView!
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) { //в этом методе определяем что мы должны делать когда выбираем кокретное изображение
-        imageView.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        imageView.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage //задаем для imageView картинку которую мы выбрали
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         dismiss(animated: true, completion: nil)
