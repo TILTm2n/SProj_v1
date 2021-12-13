@@ -30,6 +30,26 @@ class newEateryTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 5
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let alertController = UIAlertController(title: "source image", message: nil, preferredStyle: .actionSheet)
+            let cameraAction = UIAlertAction(title: "Camera", style: .default) { action in
+                <#code#>
+            }
+            let photoLibAction = UIAlertAction(title: "photo", style: .default) { action in
+                <#code#>
+            }
+            let cancelAction = UIAlertAction(title: "reject", style: .cancel, handler: nil)
+            
+            alertController.addAction(cameraAction)
+            alertController.addAction(photoLibAction)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
