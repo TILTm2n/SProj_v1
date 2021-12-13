@@ -35,10 +35,10 @@ class newEateryTableViewController: UITableViewController {
         if indexPath.row == 0 {
             let alertController = UIAlertController(title: "source image", message: nil, preferredStyle: .actionSheet)
             let cameraAction = UIAlertAction(title: "Camera", style: .default) { action in
-                <#code#>
+                self.chooseImagePickerAction(source: .camera) //сюда передаем источние - камеру
             }
             let photoLibAction = UIAlertAction(title: "photo", style: .default) { action in
-                <#code#>
+                self.chooseImagePickerAction(source: .photoLibrary) //сюда передаем источник - галерею
             }
             let cancelAction = UIAlertAction(title: "reject", style: .cancel, handler: nil)
             
@@ -47,9 +47,19 @@ class newEateryTableViewController: UITableViewController {
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
         }
+        
+        tableView.deselectRow(at: indexPath, animated: true) //этот метод просто снимает выделение строки
     }
     
-    
+    func chooseImagePickerAction(source: UIImagePickerController.SourceType)
+    {
+        if UIImagePickerController.isSourceTypeAvailable(source){ //проверятся возможно ли добраться до галереи или фотокамеры
+            let imagePicker = UIImagePickerController()
+            imagePicker.allowsEditing = true //разрешаем редактирование
+            imagePicker.sourceType = source //(источник)здесь попадааем либо на камеру либо на галерею фотографий, source указывает на то что мы хотим передать источник данных сами
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
