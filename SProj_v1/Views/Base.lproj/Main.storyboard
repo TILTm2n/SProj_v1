@@ -233,6 +233,9 @@
                                                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                         </backgroundConfiguration>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="toggleIsVisitedPressed:" destination="aoj-t3-KPE" eventType="touchUpInside" id="JQl-7Y-yHz"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xh-dh-iLn">
                                                     <rect key="frame" x="96" y="40" width="60" height="31"/>
@@ -242,6 +245,9 @@
                                                             <color key="backgroundColor" systemColor="systemRedColor"/>
                                                         </backgroundConfiguration>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="toggleIsVisitedPressed:" destination="aoj-t3-KPE" eventType="touchUpInside" id="niv-ro-0hS"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -271,9 +277,19 @@
                                 <segue destination="DY4-2o-C8l" kind="unwind" unwindAction="closeWithSegue:" id="Kiv-S1-BDc"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="yUN-sz-ZVr">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="aoj-t3-KPE" id="008-rv-8kB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="adressTextField" destination="f0X-5d-4De" id="hMb-ih-PnO"/>
                         <outlet property="imageView" destination="1iL-sC-PEd" id="hSD-sh-o88"/>
+                        <outlet property="nameTextField" destination="S7u-TQ-2RB" id="VoN-5c-aYx"/>
+                        <outlet property="noButton" destination="7xh-dh-iLn" id="iEL-AH-vwp"/>
+                        <outlet property="typeTextField" destination="LUo-RG-YkN" id="8FQ-sa-lzx"/>
+                        <outlet property="yesButton" destination="7xh-dh-iLn" id="033-vZ-zcV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjI-FH-gDo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

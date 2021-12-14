@@ -9,18 +9,32 @@ import UIKit
 
 class newEateryTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    
+    
+    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
     @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var adressTextField: UITextField!
+    @IBOutlet weak var typeTextField: UITextField!
+    @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var noButton: UIButton!
+    @IBAction func toggleIsVisitedPressed(_ sender: UIButton) {
+        if sender == yesButton{
+            sender.backgroundColor = UIColor.green
+            noButton.backgroundColor = UIColor.gray
+        }else{
+            sender.backgroundColor = UIColor.red
+            yesButton.backgroundColor = UIColor.gray
+        }
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) { //в этом методе определяем что мы должны делать когда выбираем кокретное изображение
         imageView.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage //задаем для imageView картинку которую мы выбрали
