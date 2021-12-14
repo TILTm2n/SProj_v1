@@ -223,28 +223,22 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UV9-PF-P5z">
                                                     <rect key="frame" x="20" y="40" width="60" height="30"/>
+                                                    <color key="backgroundColor" red="0.2199211509599257" green="0.73469716494845361" blue="0.33007676695999899" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="5Mo-HR-4JL"/>
                                                         <constraint firstAttribute="width" constant="60" id="ONO-kg-bWC"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Да">
-                                                        <backgroundConfiguration key="background">
-                                                            <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                                        </backgroundConfiguration>
-                                                    </buttonConfiguration>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Да"/>
                                                     <connections>
                                                         <action selector="toggleIsVisitedPressed:" destination="aoj-t3-KPE" eventType="touchUpInside" id="JQl-7Y-yHz"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xh-dh-iLn">
                                                     <rect key="frame" x="96" y="40" width="60" height="31"/>
+                                                    <color key="backgroundColor" red="0.73469716494845361" green="0.37190369218935293" blue="0.21293806027355233" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Нет">
-                                                        <backgroundConfiguration key="background">
-                                                            <color key="backgroundColor" systemColor="systemRedColor"/>
-                                                        </backgroundConfiguration>
-                                                    </buttonConfiguration>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Нет"/>
                                                     <connections>
                                                         <action selector="toggleIsVisitedPressed:" destination="aoj-t3-KPE" eventType="touchUpInside" id="niv-ro-0hS"/>
                                                     </connections>
@@ -274,7 +268,7 @@
                     <navigationItem key="navigationItem" id="NJ7-Fe-NhU">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Wbd-PQ-znu">
                             <connections>
-                                <segue destination="DY4-2o-C8l" kind="unwind" unwindAction="closeWithSegue:" id="Kiv-S1-BDc"/>
+                                <segue destination="DY4-2o-C8l" kind="unwind" identifier="unwindSegueFromNewEatery" unwindAction="closeWithSegue:" id="Kiv-S1-BDc"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="yUN-sz-ZVr">
@@ -581,12 +575,6 @@
         <image name="sunrise" width="1024" height="768"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -14,11 +14,16 @@ class newEateryTableViewController: UITableViewController, UIImagePickerControll
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         if nameTextField.text == "" || adressTextField.text == "" || typeTextField.text == "" {
             print("не все поля заполнены")
+        }else{
+            performSegue(withIdentifier: "unwindSegueFromNewEatery", sender: self)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        yesButton.backgroundColor = UIColor.green
+        noButton.backgroundColor = UIColor.red
     }
 
     // MARK: - Table view data source
