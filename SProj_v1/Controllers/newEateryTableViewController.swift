@@ -17,7 +17,7 @@ class newEateryTableViewController: UITableViewController, UIImagePickerControll
         }else{
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext
             {
-                //let restaurant = Restaurant(context: context)
+                let restaurant = Restaurant(context: context)
             }
             
             performSegue(withIdentifier: "unwindSegueFromNewEatery", sender: self)

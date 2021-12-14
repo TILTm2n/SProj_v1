@@ -9,9 +9,13 @@ import Foundation
 import CoreData
 
 struct Restaurant{
-    let name: String
-    let type: String
-    let location: String
-    let image: String
-    let isVisited: Bool
+    var name: String?
+    var type: String?
+    var location: String?
+    var image: String?
+    var isVisited: Bool?
+    let context: NSManagedObjectContext
+    init(context: NSManagedObjectContext){
+        self.context = context
+    }
 }
