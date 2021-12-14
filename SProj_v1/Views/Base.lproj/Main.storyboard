@@ -289,7 +289,7 @@
                         <outlet property="nameTextField" destination="S7u-TQ-2RB" id="VoN-5c-aYx"/>
                         <outlet property="noButton" destination="7xh-dh-iLn" id="iEL-AH-vwp"/>
                         <outlet property="typeTextField" destination="LUo-RG-YkN" id="8FQ-sa-lzx"/>
-                        <outlet property="yesButton" destination="7xh-dh-iLn" id="033-vZ-zcV"/>
+                        <outlet property="yesButton" destination="UV9-PF-P5z" id="O4Q-aI-7dl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjI-FH-gDo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

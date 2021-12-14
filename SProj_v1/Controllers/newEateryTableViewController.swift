@@ -12,6 +12,9 @@ class newEateryTableViewController: UITableViewController, UIImagePickerControll
     
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        if nameTextField.text == "" || adressTextField.text == "" || typeTextField.text == "" {
+            print("не все поля заполнены")
+        }
     }
     
     override func viewDidLoad() {
