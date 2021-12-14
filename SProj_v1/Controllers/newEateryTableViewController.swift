@@ -15,6 +15,11 @@ class newEateryTableViewController: UITableViewController, UIImagePickerControll
         if nameTextField.text == "" || adressTextField.text == "" || typeTextField.text == "" {
             print("не все поля заполнены")
         }else{
+            if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext
+            {
+                //let restaurant = Restaurant(context: context)
+            }
+            
             performSegue(withIdentifier: "unwindSegueFromNewEatery", sender: self)
         }
     }

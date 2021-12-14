@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3183F0427691B3D000CB80A /* Eateries.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3183F0227691B3D000CB80A /* Eateries.xcdatamodeld */; };
+		A3183F06276920FE000CB80A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3183F05276920FE000CB80A /* CoreDataStack.swift */; };
 		A33288DC274AA7EA00EE4726 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33288DB274AA7EA00EE4726 /* CustomTableViewController.swift */; };
 		A33288DE274AB4DE00EE4726 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33288DD274AB4DE00EE4726 /* CustomTableViewCell.swift */; };
 		A352DA3C276684F700F00E81 /* newEateryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A352DA3B276684F700F00E81 /* newEateryTableViewController.swift */; };
 		A38DEBA32752602300C450E5 /* EatersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38DEBA22752602300C450E5 /* EatersDetailViewController.swift */; };
-		A38DEBA527528A9F00C450E5 /* Restaurant.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38DEBA427528A9F00C450E5 /* Restaurant.swift.swift */; };
+		A38DEBA527528A9F00C450E5 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38DEBA427528A9F00C450E5 /* Restaurant.swift */; };
 		A38DEBA72752B8C700C450E5 /* EateryDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38DEBA62752B8C700C450E5 /* EateryDetailTableViewCell.swift */; };
 		A39967DB276144D900209B44 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39967DA276144D900209B44 /* FinalViewController.swift */; };
 		A3A9C9F02748F55700798A47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C9EF2748F55700798A47 /* AppDelegate.swift */; };
@@ -24,11 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A3183F0327691B3D000CB80A /* Eateries.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eateries.xcdatamodel; sourceTree = "<group>"; };
+		A3183F05276920FE000CB80A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		A33288DB274AA7EA00EE4726 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		A33288DD274AB4DE00EE4726 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		A352DA3B276684F700F00E81 /* newEateryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newEateryTableViewController.swift; sourceTree = "<group>"; };
 		A38DEBA22752602300C450E5 /* EatersDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatersDetailViewController.swift; sourceTree = "<group>"; };
-		A38DEBA427528A9F00C450E5 /* Restaurant.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift.swift; sourceTree = "<group>"; };
+		A38DEBA427528A9F00C450E5 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		A38DEBA62752B8C700C450E5 /* EateryDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateryDetailTableViewCell.swift; sourceTree = "<group>"; };
 		A39967DA276144D900209B44 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
 		A3A9C9EC2748F55700798A47 /* SProj_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SProj_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,7 +61,8 @@
 		A33288D8274A910E00EE4726 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A38DEBA427528A9F00C450E5 /* Restaurant.swift.swift */,
+				A38DEBA427528A9F00C450E5 /* Restaurant.swift */,
+				A3183F0227691B3D000CB80A /* Eateries.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -82,6 +87,7 @@
 				A39967DA276144D900209B44 /* FinalViewController.swift */,
 				A3D4C5852766302000E49D74 /* MapViewController.swift */,
 				A352DA3B276684F700F00E81 /* newEateryTableViewController.swift */,
+				A3183F05276920FE000CB80A /* CoreDataStack.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,7 +202,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A38DEBA72752B8C700C450E5 /* EateryDetailTableViewCell.swift in Sources */,
+				A3183F0427691B3D000CB80A /* Eateries.xcdatamodeld in Sources */,
 				A3A9C9F02748F55700798A47 /* AppDelegate.swift in Sources */,
+				A3183F06276920FE000CB80A /* CoreDataStack.swift in Sources */,
 				A352DA3C276684F700F00E81 /* newEateryTableViewController.swift in Sources */,
 				A33288DC274AA7EA00EE4726 /* CustomTableViewController.swift in Sources */,
 				A33288DE274AB4DE00EE4726 /* CustomTableViewCell.swift in Sources */,
@@ -204,7 +212,7 @@
 				A38DEBA32752602300C450E5 /* EatersDetailViewController.swift in Sources */,
 				A39967DB276144D900209B44 /* FinalViewController.swift in Sources */,
 				A3A9C9F22748F55700798A47 /* SceneDelegate.swift in Sources */,
-				A38DEBA527528A9F00C450E5 /* Restaurant.swift.swift in Sources */,
+				A38DEBA527528A9F00C450E5 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +434,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A3183F0227691B3D000CB80A /* Eateries.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A3183F0327691B3D000CB80A /* Eateries.xcdatamodel */,
+			);
+			currentVersion = A3183F0327691B3D000CB80A /* Eateries.xcdatamodel */;
+			path = Eateries.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A3A9C9E42748F55700798A47 /* Project object */;
 }
