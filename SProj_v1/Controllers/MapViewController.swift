@@ -22,7 +22,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         guard let restaurant = restaurant else {return}
         
         let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(restaurant.location ) { placemarks, error in
+        geocoder.geocodeAddressString(restaurant.location!) { placemarks, error in
             guard error == nil else {return}
             guard let placemarks = placemarks else {return}
             let placemark = placemarks.first!
@@ -55,7 +55,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         //создание контейнера для картинки
         let rightImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         //помещение картинки в контейнер
-        rightImage.image = UIImage(named: restaurant.image)
+        rightImage.image = UIImage(named: restaurant.image!)
         //добавление контейнера картинки на геопозицию
         annotationView?.rightCalloutAccessoryView = rightImage
         

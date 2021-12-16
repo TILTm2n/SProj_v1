@@ -10,23 +10,24 @@ import UIKit
 class CustomTableViewController: UITableViewController {
     
     //Модель - массивы данных
-    var restaurants: [Restaurant] = [
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Alushta", image: "ogonek.jpg", isVisited: false),
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "elu.jpg", isVisited: false),
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "bonsai.jpg", isVisited: false),
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "dastarhan.jpg", isVisited: false),
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "indokitay.jpg", isVisited: false),
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "x.o.jpg", isVisited: false),
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "balkan.jpg", isVisited: false),
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "ogonek.jpg", isVisited: false),
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "speakeasy.jpg", isVisited: false),
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "morris.jpg", isVisited: false),
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "istorii.jpg", isVisited: false),
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "klassik.jpg", isVisited: false),
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "love.jpg", isVisited: false),
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "shok.jpg", isVisited: false),
-        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "bochka.jpg", isVisited: false),
-    ]
+    var restaurants: [Restaurant] = []
+//    var restaurants: [Restaurant] = [
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Alushta", image: "ogonek.jpg", isVisited: false),
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "elu.jpg", isVisited: false),
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "bonsai.jpg", isVisited: false),
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "dastarhan.jpg", isVisited: false),
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "indokitay.jpg", isVisited: false),
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "x.o.jpg", isVisited: false),
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "balkan.jpg", isVisited: false),
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "ogonek.jpg", isVisited: false),
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "speakeasy.jpg", isVisited: false),
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "morris.jpg", isVisited: false),
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "istorii.jpg", isVisited: false),
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "klassik.jpg", isVisited: false),
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "love.jpg", isVisited: false),
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "shok.jpg", isVisited: false),
+//        Restaurant(name: "Ogonek Grill&Bar", type: "restaurant", location: "Ufa", image: "bochka.jpg", isVisited: false),
+//    ]
     
     @IBAction func close(segue: UIStoryboardSegue){
         
@@ -72,7 +73,7 @@ class CustomTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomTableViewCell
 
-        cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
+        cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image!)
         cell.nameLabel.text = restaurants[indexPath.row].name
         cell.locationLabel.text = restaurants[indexPath.row].location
         cell.typelabel.text = restaurants[indexPath.row].type
@@ -99,13 +100,13 @@ class CustomTableViewController: UITableViewController {
 //end first action
         
 //second action
-        let isVisitedTitle = self.restaurants[index].isVisited ? "I wasn't here" : "I was here"
+        let isVisitedTitle = self.restaurants[index].isVisited! ? "I wasn't here" : "I was here"
         
         let isVisited = UIAlertAction(title: isVisitedTitle, style: .default) { (action) in
             let cell = tableView.cellForRow(at: indexPath)
             
             //self.restaurants[index] = !self.restaurants[index].isVisited
-            cell?.accessoryType = self.restaurants[index].isVisited ? .checkmark : .none
+            cell?.accessoryType = self.restaurants[index].isVisited! ? .checkmark : .none
             
             
         }
@@ -140,9 +141,9 @@ class CustomTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) ->
     [UITableViewRowAction]? {
         let share = UITableViewRowAction(style: .default, title: "Поделиться") { (action, indexPath) in
-            let defaultText = "I now in" + self.restaurants[indexPath.row].name
+            let defaultText = "I now in" + self.restaurants[indexPath.row].name!
 
-            if let image = UIImage(named: self.restaurants[indexPath.row].image){
+            if let image = UIImage(named: self.restaurants[indexPath.row].image!){
                 let activityController = UIActivityViewController(activityItems: [defaultText, image], applicationActivities: nil)
             }
 

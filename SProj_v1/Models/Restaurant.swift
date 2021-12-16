@@ -14,7 +14,7 @@ struct Restaurant{
     var location: String?
     var image: String?
     var isVisited: Bool?
-    let context: NSManagedObjectContext
+    let context: NSManagedObjectContext?
     init(context: NSManagedObjectContext){
         self.context = context
     }

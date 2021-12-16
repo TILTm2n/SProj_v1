@@ -47,7 +47,7 @@ class EatersDetailViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Second Controller"
-        imageView.image = UIImage(named: restaurant!.image)
+        imageView.image = UIImage(named: restaurant!.image!)
         tableView.estimatedRowHeight = 38
         tableView.rowHeight = UITableView.automaticDimension
         
@@ -69,7 +69,7 @@ class EatersDetailViewController: UIViewController, UITableViewDataSource, UITab
             cell.valueLabel.text = restaurant?.location
         case 3:
             cell.keyLabel.text = "i was here"
-            cell.valueLabel.text = restaurant!.isVisited ? "yes" : "no"
+            cell.valueLabel.text = restaurant!.isVisited! ? "yes" : "no"
         default:
             break
         }
