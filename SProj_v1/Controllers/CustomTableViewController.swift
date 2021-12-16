@@ -73,7 +73,7 @@ class CustomTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomTableViewCell
 
-        cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image!)
+        cell.thumbnailImageView.image = UIImage(data: restaurants[indexPath.row].image! as Data)
         cell.nameLabel.text = restaurants[indexPath.row].name
         cell.locationLabel.text = restaurants[indexPath.row].location
         cell.typelabel.text = restaurants[indexPath.row].type
@@ -143,7 +143,7 @@ class CustomTableViewController: UITableViewController {
         let share = UITableViewRowAction(style: .default, title: "Поделиться") { (action, indexPath) in
             let defaultText = "I now in" + self.restaurants[indexPath.row].name!
 
-            if let image = UIImage(named: self.restaurants[indexPath.row].image!){
+            if let image = self.restaurants[indexPath.row].image{
                 let activityController = UIActivityViewController(activityItems: [defaultText, image], applicationActivities: nil)
             }
 

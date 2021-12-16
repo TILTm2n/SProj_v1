@@ -55,7 +55,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         //создание контейнера для картинки
         let rightImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         //помещение картинки в контейнер
-        rightImage.image = UIImage(named: restaurant.image!)
+        //rightImage.image = UIImage(named: restaurant.image!)
+        rightImage.image = UIImage(data: restaurant.image! as Data)
         //добавление контейнера картинки на геопозицию
         annotationView?.rightCalloutAccessoryView = rightImage
         

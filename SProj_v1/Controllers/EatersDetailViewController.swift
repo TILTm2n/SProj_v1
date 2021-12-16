@@ -47,7 +47,7 @@ class EatersDetailViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Second Controller"
-        imageView.image = UIImage(named: restaurant!.image!)
+        imageView.image = UIImage(data: restaurant?.image! as Data)
         tableView.estimatedRowHeight = 38
         tableView.rowHeight = UITableView.automaticDimension
         

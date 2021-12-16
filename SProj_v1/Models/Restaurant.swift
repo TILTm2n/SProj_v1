@@ -7,12 +7,13 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 struct Restaurant{
     var name: String?
     var type: String?
     var location: String?
-    var image: String?
+    var image: NSData?
     var isVisited: Bool?
     let context: NSManagedObjectContext?
     init(context: NSManagedObjectContext){

@@ -17,7 +17,21 @@ class newEateryTableViewController: UITableViewController, UIImagePickerControll
         }else{
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext
             {
-                let restaurant = Restaurant(context: context)
+                var restaurant = Restaurant(context: context)
+                restaurant.name = nameTextField.text
+                restaurant.location = adressTextField.text
+                restaurant.type = typeTextField.text
+                restaurant.isVisited = isVisited
+                if let image = imageView.image{
+                    restaurant.image = image.pngData() as NSData?
+                }
+                
+                do{
+                    try context.save()
+                    print("сохраниение удалось")
+                }catch let error as NSError{
+                    print("сохраниение не удалось, \(error), \(error.userInfo)")
+                }
             }
             
             performSegue(withIdentifier: "unwindSegueFromNewEatery", sender: self)
@@ -39,13 +53,17 @@ class newEateryTableViewController: UITableViewController, UIImagePickerControll
     @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
+    var isVisited = false
+    
     @IBAction func toggleIsVisitedPressed(_ sender: UIButton) {
         if sender == yesButton{
             sender.backgroundColor = UIColor.green
             noButton.backgroundColor = UIColor.gray
+            isVisited = true
         }else{
             sender.backgroundColor = UIColor.red
             yesButton.backgroundColor = UIColor.gray
+            isVisited = false
         }
     }
     
